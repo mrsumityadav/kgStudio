@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Packages</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <style>
+        .ri-check-line {
+            color: #22c55e;
+        }
+
+        .not-include {
+            color: gray;
+        }
+
+        .slider {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow-x: auto;
+            /* scroll-snap-type: x mandatory */
+        }
+
+        .slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .card {
+            min-width: 400px;
+            scroll-snap-align: start;
+            width: 400px;
+            margin-right: 1rem;
+        }
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="px-4 sm:px-8 md:px-16 mt-8 md:mt-16 relative flex items-center justify-center">
+        <button class="nav-button left left-[2%]" onclick="slide(-1)"><i class="ri-arrow-left-s-line"></i></button>
+        <button class="nav-button right right-[2%]" onclick="slide(1)"><i class="ri-arrow-right-s-line"></i></button>
+
+        <div id="slider" class="slider">
+
+            <!-- Silver Package -->
+            <div class="card bg-gray-100 hover:shadow-xl transition-shadow duration-300 flex flex-col rounded-lg p-4">
+                <div class="space-y-2">
+                    <h2 class="text-xl font-bold">Silver Package</h2>
+                    <p class="text-sm text-gray-600">Perfect for small projects and events</p>
+                </div>
+                <div class="flex-grow space-y-4 mt-4">
+                    <p class="text-xl font-semibold">Price: <del class="text-[#fc0234]">₹3000</del> ₹27000</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="ri-check-line"></i> 2 hours of photography</li>
+                        <li><i class="ri-check-line"></i> 1 hour of videography</li>
+                        <li><i class="ri-check-line"></i> 50 edited photos</li>
+                        <li><i class="ri-check-line"></i> 5-minute highlight video</li>
+                        <li><i class="ri-check-line"></i> Online gallery</li>
+                        <li class="not-include"><i class="ri-subtract-line"></i> Large prints (16x20): Not included</li>
+                        <li class="not-include"><i class="ri-subtract-line"></i> Photo album: Not included</li>
+                    </ul>
+                </div>
+                <div class="mt-4">
+                    <button class="w-full py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Choose Silver</button>
+                </div>
+            </div>
+
+            <!-- Gold Package -->
+            <div class="card bg-yellow-100 hover:shadow-xl transition-shadow duration-300 flex flex-col rounded-lg p-4">
+                <div class="space-y-2">
+                    <h2 class="text-xl font-bold">Gold Package</h2>
+                    <p class="text-sm text-gray-600">Ideal for medium-sized events and product shoots</p>
+                </div>
+                <div class="flex-grow space-y-4 mt-4">
+                    <p class="text-xl font-semibold">Price: <del class="text-[#fc0234]">₹39000</del> ₹35000</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="ri-check-line"></i> 4 hours of photography</li>
+                        <li><i class="ri-check-line"></i> 2 hours of videography</li>
+                        <li><i class="ri-check-line"></i> 100 edited photos</li>
+                        <li><i class="ri-check-line"></i> 10-minute highlight video</li>
+                        <li><i class="ri-check-line"></i> Online gallery</li>
+                        <li><i class="ri-check-line"></i> 1 large print (16x20)</li>
+                        <li class="not-include"><i class="ri-subtract-line"></i> Photo album</li>
+                    </ul>
+                </div>
+                <div class="mt-4">
+                    <button class="w-full py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Choose Gold</button>
+                </div>
+            </div>
+
+            <!-- Platinum Package -->
+            <div class="card bg-blue-100 hover:shadow-xl transition-shadow duration-300 flex flex-col rounded-lg p-4">
+                <div class="space-y-2">
+                    <h2 class="text-xl font-bold">Platinum Package</h2>
+                    <p class="text-sm text-gray-600">Comprehensive coverage for large events</p>
+                </div>
+                <div class="flex-grow space-y-4 mt-4">
+                    <p class="text-xl font-semibold">Price: <del class="text-[#fc0234]">₹50000</del> ₹45000</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="ri-check-line"></i> Full day photography (8 hours)</li>
+                        <li><i class="ri-check-line"></i> 4 hours of videography</li>
+                        <li><i class="ri-check-line"></i> 200 edited photos</li>
+                        <li><i class="ri-check-line"></i> 15-minute highlight video</li>
+                        <li><i class="ri-check-line"></i> Online gallery</li>
+                        <li><i class="ri-check-line"></i> 2 large prints (16x20)</li>
+                        <li><i class="ri-check-line"></i> Photo album</li>
+                    </ul>
+                </div>
+                <div class="mt-4">
+                    <button class="w-full py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Choose Platinum</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function slide(direction) {
+            const slider = document.getElementById('slider');
+            const cardWidth = slider.children[0].offsetWidth + 16; // Card width + margin
+            slider.scrollBy({
+                left: direction * cardWidth,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+
+</html>

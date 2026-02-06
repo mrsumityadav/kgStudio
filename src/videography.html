@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KG Studio Videography</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="input.css">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script> -->
+
+</head>
+
+<body class="min-h-screen bg-gradient-to-b from-black to-zinc-900 text-white">
+
+    <!-- navbar -->
+    <nav id="navigation"
+        class="w-full fixed top-0 bg-black flex items-center justify-between py-6 px-10 z-[99]  border-b-4 border-[#D9B944]">
+        <!-- logo -->
+        <div class="logo">
+            <img class="md:w-24 w-32 lg:w-28 xl:w-32" src="Images/logo.png" alt="Logo" />
+        </div>
+        <!-- main-links -->
+        <div class="text-white text-xs lg:text-sm xl:text-base hidden md:block">
+            <a href="index.html" class="nav-link ml-5">Home</a>
+            <a href="photography.html " class="nav-link ml-5">Photography</a>
+            <a class="nav-link ml-5 cursor-not-allowed">Videography</a>
+            <div x-data="{ open: false }" class="relative inline-block">
+                <a @click="open = !open" href="#" class="nav-link ml-5 hover:text-gray-300 flex items-center">
+                    Packages
+                    <svg class="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </a>
+                <div x-show="open" @click.away="open = false" x-transition
+                    class="absolute left-0 mt-2 bg-white text-black rounded shadow-lg w-40 text-sm">
+                    <a href="#silver" class="block px-4 py-2 hover:bg-gray-200">Silver Package</a>
+                    <a href="#golden" class="block px-4 py-2 hover:bg-gray-200">Golden Package</a>
+                    <a href="#platinum" class="block px-4 py-2 hover:bg-gray-200">Platinum Package</a>
+                </div>
+            </div>
+            <a href="#" class="nav-link ml-5">Photo Albums</a>
+        </div>
+        <!-- button -->
+        <div class="hidden md:block">
+            <button class="text-xs lg:text-sm xl:text-base whitespace-nowrap btn px-4 py-[6px] bg-white 
+                text-black rounded-full"><a href="contact.html">Book now</a></button>
+        </div>
+        <!-- humberger-menu -->
+        <div id="humburger" class="block md:hidden cursor-pointer">
+            <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line y1="1" x2="22" y2="1" stroke="white" stroke-width="2" />
+                <line y1="8" x2="22" y2="8" stroke="white" stroke-width="2" />
+                <line y1="15" x2="22" y2="15" stroke="white" stroke-width="2" />
+            </svg>
+        </div>
+        <!-- humberger-links -->
+        <div
+            class="humburger_menu absolute top-0 -right-full w-[80%] min-h-screen bg-zinc-900 flex flex-col justify-center gap-8 text-white duration-300">
+            <div>
+                <svg class="absolute top-6 right-6 h-5 humburger_close cursor-pointer" viewBox="0 0 55 55" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M23.2761 27.5001L0 4.22399L4.22399 0L27.5 23.2758L50.776 0L55 4.22399L31.724 27.5001L55 50.7757L50.776 55L27.5 31.724L4.22399 55L0 50.7757L23.2761 27.5001Z"
+                        fill="white" />
+                </svg>
+            </div>
+            <ul class="flex flex-col ml-[10%] justify-center gap-8 text-2xl">
+                <a href="index.html" class="w-fit">Home</a>
+                <a href="photography.html" class="w-fit">Photography</a>
+                <a href="#" class="w-fit">Videography</a>
+                <div x-data="{ open: false }" class="relative">
+                    <a @click="open = !open" href="#" class="flex items-center w-fit">
+                        Packages
+                        <svg class="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <div x-show="open" @click.away="open = false" x-transition class="ml-5 mt-2 text-sm">
+                        <a href="#silver" class="block hover:text-gray-300">Silver Package</a>
+                        <a href="#golden" class="block hover:text-gray-300">Golden Package</a>
+                        <a href="#platinum" class="block hover:text-gray-300">Platinum Package</a>
+                    </div>
+                </div>
+                <a href="#" class="w-fit">Photo Albums</a>
+                <a href="contact.html" class="w-fit">Book Now</a>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <video src="video/first.mp4" class="object-cover w-full h-full opacity-50" autoplay muted></video>
+        </div>
+        <div class="relative z-10 text-center space-y-4 p-6">
+            <h1
+                class="text-4xl md:text-6xl font-bold bg-gradient-to-r from-amber-200 to-amber-500 bg-clip-text text-transparent">
+                KG Studio Videography
+            </h1>
+            <p class="text-amber-100 text-xl md:text-2xl max-w-2xl mx-auto">
+                Capturing Your Precious Moments in Cinematic Excellence
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <div class="grid gap-8 md:grid-cols-2" id="videoCategories">
+            <!-- Video categories will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 px-4 text-center bg-gradient-to-t from-black to-transparent">
+        <div class="max-w-3xl mx-auto space-y-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-amber-400">
+                Ready to Create Your Story?
+            </h2>
+            <p class="text-amber-100/80 text-lg">
+                Let's work together to capture your special moments in stunning cinematic quality.
+            </p>
+            <a href="contact.html"
+                class="inline-block px-8 py-3 bg-amber-600 text-white rounded-md hover:bg-amber-700 transition-colors duration-200 text-lg">
+                Book a Consultation
+            </a>
+        </div>
+    </section>
+
+    <script>
+        const videoCategories = [
+            {
+                title: "Wedding Videography",
+                description: "Capture every precious moment of your special day in cinematic quality. Our wedding films tell your unique love story.",
+                image: "video/wedding.mp4",
+                features: [
+                    "Cinematic Style Coverage",
+                    "Drone Aerial Shots",
+                    "Same Day Edit Options",
+                    "4K Quality Video",
+                ]
+            },
+            {
+                title: "Pre-Wedding Videography",
+                description: "Create a beautiful love story video before your big day. Perfect for wedding invitations and social media.",
+                image: "video/pre-wedding.mp4",
+                features: [
+                    "Creative Concept Development",
+                    "Multiple Location Shoots",
+                    "Music Selection",
+                    "Story-Driven Editing",
+                ]
+            },
+            {
+                title: "Birthday Videography",
+                description: "Turn your birthday celebration into a timeless memory with our professional videography services.",
+                image: "video/birthday.mp4",
+                features: [
+                    "Event Highlights",
+                    "Guest Messages",
+                    "Custom Music Integration",
+                    "Quick Turnaround",
+                ]
+            },
+            {
+                title: "Product Videography",
+                description: "Showcase your products with stunning professional videos that capture every detail and feature.",
+                image: "video/product.mp4",
+                features: [
+                    "High-Detail Macro Shots",
+                    "360° Product Views",
+                    "Commercial Grade Lighting",
+                    "Professional Color Grading",
+                ]
+            },
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const categoriesContainer = document.getElementById('videoCategories');
+            videoCategories.forEach(category => {
+                const categoryElement = document.createElement('div');
+                categoryElement.className = 'group overflow-hidden border border-amber-800/20 bg-black/40 backdrop-blur-sm hover:border-amber-500/50 transition-all duration-300 rounded-lg';
+                categoryElement.innerHTML = `
+                    <div class="p-0">
+                        <div class="relative h-64 overflow-hidden">
+                            <video loop autoplay muted src="${category.image}" alt="${category.title}" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300"></div>
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <i data-lucide="play" class="w-16 h-16 text-amber-400"></i>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-2xl font-semibold text-amber-400">${category.title}</h3>
+                            <p class="text-amber-100/80">${category.description}</p>
+                            <ul class="grid grid-cols-2 gap-2">
+                                ${category.features.map(feature => `
+                                    <li class="flex items-center text-sm text-amber-200/60">
+                                        <span class="mr-2 text-amber-400">•</span>
+                                        ${feature}
+                                    </li>
+                                `).join('')}
+                            </ul>
+                            <a href="contact.html" class="inline-block mt-4 px-6 py-2 bg-amber-600 text-white rounded-md hover:bg-amber-700 transition-colors duration-200">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                `;
+                categoriesContainer.appendChild(categoryElement);
+            });
+
+            // Initialize Lucide icons
+            lucide.createIcons();
+        });
+    </script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
