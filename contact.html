@@ -42,6 +42,7 @@
             background-size: cover;
             background-position: center;
             position: relative;
+            margin-top: 84px;
         }
 
         .hero-overlay {
@@ -58,14 +59,14 @@
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            /* font-size: 3.5rem; */
             font-weight: bold;
             color: var(--color-golden-500);
             margin-bottom: 1rem;
         }
 
         .hero-content p {
-            font-size: 1.25rem;
+            /* font-size: 1.25rem; */
             color: var(--color-golden-200);
         }
 
@@ -207,8 +208,8 @@
             <div class="text-white text-xs lg:text-sm xl:text-base hidden md:block">
                 <a href="index.html" class="nav-link ml-5">Home</a>
                 <a href="photography.html " class="nav-link ml-5">Photography</a>
-                <a href="#" class="nav-link ml-5">Videography</a>
-                <div x-data="{ open: false }" class="relative inline-block">
+                <a href="videography.html" class="nav-link ml-5">Videography</a>
+                <!-- <div x-data="{ open: false }" class="relative inline-block">
                     <a @click="open = !open" href="#" class="nav-link ml-5 hover:text-gray-300 flex 
         items-center">
                         Packages
@@ -223,8 +224,8 @@
                         <a href="#golden" class="block px-4 py-2 hover:bg-gray-200">Golden Package</a>
                         <a href="#platinum" class="block px-4 py-2 hover:bg-gray-200">Platinum Package</a>
                     </div>
-                </div>
-                <a href="#" class="nav-link ml-5">Photo Albums</a>
+                </div> -->
+                <!-- <a href="#" class="nav-link ml-5">Photo Albums</a> -->
             </div>
 
             <div class="hidden md:block">
@@ -282,8 +283,8 @@
         <div class="hero">
             <div class="hero-overlay">
                 <div class="hero-content">
-                    <h1>Book Your Perfect Moment</h1>
-                    <p>Let us capture your special day in timeless elegance</p>
+                    <h1 class="text-4xl lg:text-5xl">Book Your Perfect Moment</h1>
+                    <p class="px-4 lg:text-lg">Let us capture your special day in timeless elegance</p>
                 </div>
             </div>
         </div>
